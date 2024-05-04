@@ -27,7 +27,7 @@ df['date'] = pd.to_datetime(df['created_at']).dt.date
 print(df.groupby('year')['date'].count())
 df = df[df['year'] > 2006] # very little data for this one
 
-"""
+#""" 
 # sentiment distribution
 plt.hist(df['sentiment'])
 plt.title("Sentiment Distribution")
@@ -108,9 +108,6 @@ plt.axhline(y=0.5, color='black', linestyle='--', label='50%')
 plt.savefig('stance-overtime-ratio-per-year.png')
 plt.show()
 
-
-
-
 df = df[df['topic'] != 'Undefined / One Word Hashtags'] # not useful topic
 topics = df['topic'].unique()
 
@@ -180,7 +177,7 @@ plt.xlabel('Year')
 plt.ylabel('Ratio of Topic Tweets')
 plt.savefig('tweets-topics-per-year.png')
 plt.show()
-"""
+#"""
 
 df = df[df['topic'] != 'Undefined / One Word Hashtags'] # not useful topic
 topics = df['topic'].unique()
